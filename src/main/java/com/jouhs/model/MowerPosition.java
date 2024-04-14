@@ -66,7 +66,7 @@ public class MowerPosition {
         };
     }
 
-    public void turnTurnRight() {
+    public void turnRight() {
         this.direction = switch (this.direction) {
             case 'N' -> 'E';
             case 'S' -> 'W';
