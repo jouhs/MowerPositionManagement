@@ -14,3 +14,6 @@ Création de model de base
 
 ## Test : testMoveNorth
 Ce test est composé de plusieurs commits 
+
+## Test : testMoveSouth
+Aussi, ce test est composé de plusieurs commits, de coup, on va creer un test qui échoue ensuite on le corrige
