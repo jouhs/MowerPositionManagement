@@ -26,3 +26,10 @@ Création les deux tests avec les méthodes testTurnLeft() et turnTurnRight()
 
 ## Amélioration:
 Création de la méthode getCurrentMowerPosition() qui doit recuperer des valeus comme : "1 3 N" et "5 1 E"
+
+## Cas extremes:
+Si x = 0 et la direction vers le Sud, 
+ou x= xMaxValue et direction = 'N', 
+ou y= 0 et direction = 'W' 
+ou y= yMaxValue et direction = 'E' 
+==> la tondeuse doit rester à ça place sans changer de direction 

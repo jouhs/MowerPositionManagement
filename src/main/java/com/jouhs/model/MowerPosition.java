@@ -38,20 +38,24 @@ public class MowerPosition {
     public String getCurrentMowerPosition() {
         return x + " " + y + " " + direction;
     }
-
-    public void move() {
+    
+    public void move(int xMaxValue, int yMaxValue) {
         switch (this.direction) {
             case 'N':
-                this.y ++;
+                if (this.y < yMaxValue)
+                    this.y ++;
                 break;
             case 'S':
-                this.y --;
+                if (this.y > 0)
+                    this.y --;
                 break;
             case 'E':
-                this.x ++;
+                if (this.x < xMaxValue)
+                    this.x ++;
                 break;
             case 'W':
-                this.x --;
+                if (this.x > 0)
+                    this.x --;
                 break;
         }
     }
