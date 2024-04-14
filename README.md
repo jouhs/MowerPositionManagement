@@ -17,3 +17,6 @@ Ce test est composé de plusieurs commits
 
 ## Test : testMoveSouth
 Aussi, ce test est composé de plusieurs commits, de coup, on va creer un test qui échoue ensuite on le corrige
+
+## Tests: testMoveEast and testMoveWest
+à l'instar des deux tests d'avants, on suit le meme sénario pour les tests testMoveEast et testMoveWest 
