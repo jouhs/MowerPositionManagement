@@ -36,16 +36,19 @@ public class MowerPosition {
     }
 
     public void move() {
-        if (this.direction == 'N')
-            this.y ++;
-        else if (this.direction == 'S') {
-            this.y --;
-        }
-        else if (this.direction == 'E') {
-            this.x ++;
-        }
-        else if (this.direction == 'W') {
-            this.x --;
+        switch (this.direction) {
+            case 'N':
+                this.y ++;
+                break;
+            case 'S':
+                this.y --;
+                break;
+            case 'E':
+                this.x ++;
+                break;
+            case 'W':
+                this.x --;
+                break;
         }
     }
 }
