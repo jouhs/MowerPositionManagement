@@ -38,59 +38,41 @@ public class MowerPosition {
     public String getCurrentMowerPosition() {
         return x + " " + y + " " + direction;
     }
-    
+
     public void move(int xMaxValue, int yMaxValue) {
         switch (this.direction) {
             case 'N':
-                if (this.y < yMaxValue)
-                    this.y ++;
+                this.y = Math.min(this.y + 1, yMaxValue);
                 break;
             case 'S':
-                if (this.y > 0)
-                    this.y --;
+                this.y = Math.max(this.y - 1, 0);
                 break;
             case 'E':
-                if (this.x < xMaxValue)
-                    this.x ++;
+                this.x = Math.min(this.x + 1, xMaxValue);
                 break;
             case 'W':
-                if (this.x > 0)
-                    this.x --;
+                this.x = Math.max(this.x - 1, 0);
                 break;
         }
     }
 
     public void turnLeft() {
-        switch (this.direction) {
-            case 'N':
-                this.direction = 'W';
-                break;
-            case 'S':
-                this.direction = 'E';
-                break;
-            case 'E':
-                this.direction = 'N';
-                break;
-            case 'W':
-                this.direction = 'S';
-                break;
-        }
+        this.direction = switch (this.direction) {
+            case 'N' -> 'W';
+            case 'S' -> 'E';
+            case 'E' -> 'N';
+            case 'W' -> 'S';
+            default -> this.direction;
+        };
     }
 
     public void turnTurnRight() {
-        switch (this.direction) {
-            case 'N':
-                this.direction = 'E';
-                break;
-            case 'S':
-                this.direction = 'W';
-                break;
-            case 'E':
-                this.direction = 'S';
-                break;
-            case 'W':
-                this.direction = 'N';
-                break;
-        }
+        this.direction = switch (this.direction) {
+            case 'N' -> 'E';
+            case 'S' -> 'W';
+            case 'E' -> 'S';
+            case 'W' -> 'N';
+            default -> this.direction;
+        };
     }
 }
