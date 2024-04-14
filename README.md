@@ -8,3 +8,8 @@ D'abord et après lecture de l'énoncé, je vais cree une classe model de base n
 
 ## Commit : "Initial commit"
 Création d'un projet vide
+
+## Commit : "Create Model"
+Création de model de base
+
+## 
