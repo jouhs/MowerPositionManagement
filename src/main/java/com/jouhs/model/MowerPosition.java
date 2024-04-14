@@ -68,4 +68,7 @@ public class MowerPosition {
                 break;
         }
     }
+
+    public void turnTurnRight() {
+    }
 }
