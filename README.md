@@ -20,3 +20,6 @@ Aussi, ce test est composé de plusieurs commits, de coup, on va creer un test q
 
 ## Tests: testMoveEast and testMoveWest
 à l'instar des deux tests d'avants, on suit le meme sénario pour les tests testMoveEast et testMoveWest 
+
+## Tests: testTurnLeft and testTurnRight
+

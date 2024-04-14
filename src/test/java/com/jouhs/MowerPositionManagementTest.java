@@ -42,7 +42,16 @@ class MowerPositionManagementTest {
         MowerPosition mowerPosition = new MowerPosition(x,y, direction);
         mowerPosition.move();
         assertThat(mowerPosition.getX()).isEqualTo(x-1);
-        assertThat(mowerPosition.getDirection()).isEqualTo('W');
+        assertThat(mowerPosition.getDirection()).isEqualTo('S');
+    }
+
+    @Test
+    public void testTurnLeft() {
+        int x = 1, y = 1;
+        char direction = 'W';
+        MowerPosition mowerPosition = new MowerPosition(x,y, direction);
+        mowerPosition.turnLeft();
+        assertThat(mowerPosition.getDirection()).isEqualTo('S');
     }
 
 }
