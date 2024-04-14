@@ -32,4 +32,4 @@ Si x = 0 et la direction vers le Sud,
 ou x= xMaxValue et direction = 'N', 
 ou y= 0 et direction = 'W' 
 ou y= yMaxValue et direction = 'E' 
-==> la tondeuse doit rester à ça place sans changer de direction 
+==> la tondeuse doit rester à ça place sans changer de direction, dans ce cas, on améliore la méthode move et on cree les tests qui vot avec

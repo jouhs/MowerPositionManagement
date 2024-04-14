@@ -12,7 +12,7 @@ class MowerPositionManagementTest {
         char direction = 'N';
         MowerPosition mowerPosition = new MowerPosition(x,y, direction);
         mowerPosition.move(xMaxValue, yMaxValue);
-        assertThat(mowerPosition.getY()).isEqualTo(y-1);
+        assertThat(mowerPosition.getY()).isEqualTo(y+1);
         assertThat(mowerPosition.getDirection()).isEqualTo('N');
     }
 
@@ -65,6 +65,35 @@ class MowerPositionManagementTest {
         MowerPosition mowerPosition = new MowerPosition(x,y, direction);
         mowerPosition.turnTurnRight();
         assertThat(mowerPosition.getDirection()).isEqualTo('N');
+    }
+
+    @Test
+    public void testExtremeCases() {
+        int xMaxValue = 5, yMaxValue = 5;
+        int x = 1, y = 0;
+        char direction = 'S';
+        MowerPosition mowerPosition = new MowerPosition(x,y, direction);
+        mowerPosition.move(xMaxValue, yMaxValue);
+        assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("1 0 S");
+
+        x = 0;
+        direction = 'W';
+        mowerPosition = new MowerPosition(x,y, direction);
+        mowerPosition.move(xMaxValue, yMaxValue);
+        assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("0 0 W");
+
+        y = yMaxValue;
+        direction = 'N';
+        mowerPosition = new MowerPosition(x,y, direction);
+        mowerPosition.move(xMaxValue, yMaxValue);
+        assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("0 5 N");
+
+        x = xMaxValue;
+        direction = 'E';
+        mowerPosition = new MowerPosition(x,y, direction);
+        mowerPosition.move(xMaxValue, yMaxValue);
+        assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("5 5 E");
+
     }
 
 }
