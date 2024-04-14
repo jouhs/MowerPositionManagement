@@ -33,3 +33,8 @@ ou x= xMaxValue et direction = 'N',
 ou y= 0 et direction = 'W' 
 ou y= yMaxValue et direction = 'E' 
 ==> la tondeuse doit rester à ça place sans changer de direction, dans ce cas, on améliore la méthode move et on cree les tests qui vot avec
+
+## Test des scénarios :
+Pour ce faire, on a choisi de creer une nouvelle classe MowerPositionService qui contient la méthode executeActions(...), pour jouer nos scénario d'une manière générique sans surchargé la classe model des méthodes de traitements.
+
+En parallèle, on crée un test qui échoue ensuite en le corrige et par la suite en ajoutant un deuxième test avec le deuxième scénario.
