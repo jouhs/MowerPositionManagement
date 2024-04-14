@@ -36,6 +36,10 @@ public class MowerPosition {
     }
 
     public void move() {
-        this.y ++;
+        if (this.direction == 'N')
+            this.y ++;
+        else if (this.direction == 'S') {
+            this.y --;
+        }
     }
 }
