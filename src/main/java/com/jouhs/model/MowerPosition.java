@@ -35,6 +35,10 @@ public class MowerPosition {
         this.direction = direction;
     }
 
+    public String getCurrentMowerPosition() {
+        return x + " " + y + " " + direction;
+    }
+
     public void move() {
         switch (this.direction) {
             case 'N':

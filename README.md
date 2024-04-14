@@ -24,3 +24,5 @@ Aussi, ce test est composé de plusieurs commits, de coup, on va creer un test q
 ## Tests: testTurnLeft and testTurnRight
 Création les deux tests avec les méthodes testTurnLeft() et turnTurnRight()
 
+## Amélioration:
+Création de la méthode getCurrentMowerPosition() qui doit recuperer des valeus comme : "1 3 N" et "5 1 E"
