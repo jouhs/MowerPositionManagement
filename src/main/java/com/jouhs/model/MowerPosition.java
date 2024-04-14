@@ -36,5 +36,6 @@ public class MowerPosition {
     }
 
     public void move() {
+        this.y ++;
     }
 }
