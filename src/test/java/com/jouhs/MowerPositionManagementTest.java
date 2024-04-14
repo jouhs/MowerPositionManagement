@@ -60,7 +60,7 @@ class MowerPositionManagementTest {
         char direction = 'W';
         MowerPosition mowerPosition = new MowerPosition(x,y, direction);
         mowerPosition.turnTurnRight();
-        assertThat(mowerPosition.getDirection()).isEqualTo('S');
+        assertThat(mowerPosition.getDirection()).isEqualTo('N');
     }
 
 }
