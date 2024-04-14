@@ -41,7 +41,7 @@ class MowerPositionManagementTest {
         char direction = 'W';
         MowerPosition mowerPosition = new MowerPosition(x,y, direction);
         mowerPosition.move();
-        assertThat(mowerPosition.getX()).isEqualTo(-1);
+        assertThat(mowerPosition.getX()).isEqualTo(x-1);
         assertThat(mowerPosition.getDirection()).isEqualTo('W');
     }
 

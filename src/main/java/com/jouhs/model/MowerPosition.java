@@ -44,5 +44,8 @@ public class MowerPosition {
         else if (this.direction == 'E') {
             this.x ++;
         }
+        else if (this.direction == 'W') {
+            this.x --;
+        }
     }
 }
