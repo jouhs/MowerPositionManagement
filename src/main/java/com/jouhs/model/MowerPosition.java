@@ -34,4 +34,7 @@ public class MowerPosition {
     public void setDirection(char direction) {
         this.direction = direction;
     }
+
+    public void move() {
+    }
 }
