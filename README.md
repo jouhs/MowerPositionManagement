@@ -41,4 +41,6 @@ En parallèle, on crée un test qui échoue ensuite en le corrige et par la suit
 
 Ensuite, on récupère les données depuis d'un fichier par scenario toute en réalisant les tests.
 
+## Création de l'application principale
+On crée une classe App.class dont l'objectif est de lire depuis un fichier les données, et lance pour chaque scénario le jeu d'exécutions d'actions toute en affichant pour chacun la position finale de tondeuse.
 
