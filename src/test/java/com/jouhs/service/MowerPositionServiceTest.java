@@ -55,31 +55,12 @@ class MowerPositionServiceTest {
     @Test
     public void testExecuteActionsForTheFirstScenarioFromFile() {
         String filename = "inputDataScenario1.txt";
-        try {
-            ClassLoader classLoader = MowerPositionServiceTest.class.getClassLoader();
-            InputStream inputStream = classLoader.getResourceAsStream(filename);
 
-            Scanner scanner = new Scanner(inputStream);
-            int xMaxValue = scanner.nextInt();
-            int yMaxValue = scanner.nextInt();
+        MowerPositionService mowerPositionService = new MowerPositionService();
+        MowerPosition mowerPosition = executeActionsFromFile(filename, mowerPositionService);
 
-            // Ligne suivante
-            scanner.nextLine();
-            int x = scanner.nextInt();
-            int y = scanner.nextInt();
-            char direction = scanner.next().charAt(0);
+        assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("1 3 N");
 
-            // Ligne suivante
-            scanner.nextLine();
-            String actions = scanner.nextLine();
-            MowerPositionService mowerPositionService = new MowerPositionService();
-            MowerPosition mowerPosition = mowerPositionService.executeActions(actions, x, y, direction, xMaxValue, yMaxValue);
-
-            assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("1 3 N");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
 
@@ -87,6 +68,13 @@ class MowerPositionServiceTest {
     @Test
     public void testExecuteActionsForTheSecondScenarioFromFile() {
         String filename = "inputDataScenario2.txt";
+        MowerPositionService mowerPositionService = new MowerPositionService();
+        MowerPosition mowerPosition = executeActionsFromFile(filename, mowerPositionService);
+
+        assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("5 1 E");
+    }
+
+    private MowerPosition executeActionsFromFile(String filename, MowerPositionService mowerPositionService) {
         try {
             ClassLoader classLoader = MowerPositionServiceTest.class.getClassLoader();
             InputStream inputStream = classLoader.getResourceAsStream(filename);
@@ -104,13 +92,12 @@ class MowerPositionServiceTest {
             // Ligne suivante
             scanner.nextLine();
             String actions = scanner.nextLine();
-            MowerPositionService mowerPositionService = new MowerPositionService();
-            MowerPosition mowerPosition = mowerPositionService.executeActions(actions, x, y, direction, xMaxValue, yMaxValue);
 
-            assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("5 1 E");
-
+            return mowerPositionService.executeActions(actions, x, y, direction, xMaxValue, yMaxValue);
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
+
     }
 }

@@ -38,3 +38,7 @@ ou y= yMaxValue et direction = 'E'
 Pour ce faire, on a choisi de creer une nouvelle classe MowerPositionService qui contient la méthode executeActions(...), pour jouer nos scénario d'une manière générique sans surchargé la classe model des méthodes de traitements.
 
 En parallèle, on crée un test qui échoue ensuite en le corrige et par la suite en ajoutant un deuxième test avec le deuxième scénario.
+
+Ensuite, on récupère les données depuis d'un fichier par scenario toute en réalisant les tests.
+
+
