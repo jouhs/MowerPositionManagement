@@ -81,4 +81,36 @@ class MowerPositionServiceTest {
             e.printStackTrace();
         }
     }
+
+
+
+    @Test
+    public void testExecuteActionsForTheSecondScenarioFromFile() {
+        String filename = "inputDataScenario2.txt";
+        try {
+            ClassLoader classLoader = MowerPositionServiceTest.class.getClassLoader();
+            InputStream inputStream = classLoader.getResourceAsStream(filename);
+
+            Scanner scanner = new Scanner(inputStream);
+            int xMaxValue = scanner.nextInt();
+            int yMaxValue = scanner.nextInt();
+
+            // Ligne suivante
+            scanner.nextLine();
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            char direction = scanner.next().charAt(0);
+
+            // Ligne suivante
+            scanner.nextLine();
+            String actions = scanner.nextLine();
+            MowerPositionService mowerPositionService = new MowerPositionService();
+            MowerPosition mowerPosition = mowerPositionService.executeActions(actions, x, y, direction, xMaxValue, yMaxValue);
+
+            assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("5 1 E");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
