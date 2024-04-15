@@ -25,6 +25,5 @@ class MowerPositionServiceTest {
         MowerPosition mowerPosition = mowerPositionService.executeActions(actions, x, y, direction, xMaxValue, yMaxValue);
 
         assertThat(mowerPosition.getCurrentMowerPosition()).isEqualTo("1 3 N");
-
     }
 }
